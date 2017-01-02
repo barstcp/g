@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         fragmentManager = getSupportFragmentManager();
 
-
         Fragment fragment = fragmentManager.findFragmentByTag(TAG);
         if (fragment == null) replaceFragment(new LoginFragment(), false);
     }
