@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
 
+
         Fragment fragment = fragmentManager.findFragmentByTag(TAG);
         if (fragment == null) replaceFragment(new LoginFragment(), false);
     }
