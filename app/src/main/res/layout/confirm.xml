@@ -11,34 +11,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
-        android:layout_marginTop="33dp"
         android:id="@+id/imageView"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <com.github.pinball83.maskededittext.MaskedEditText
+    <TextView
+        android:text="На указанный номер телефона было отправлено СМС с кодом"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
         android:id="@+id/login_mobile_number"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="number"
-        app:mask="+7 (***) *** **-**"
-        app:notMaskedSymbol="*"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/btn_code"
-        android:layout_alignStart="@+id/btn_code" />
-
-    <TextView
-        android:text="Для авторизации вам нужно ввести номер вашего телефона"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="28dp"
+        android:hint="Введите код"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/btn_confirm"
+        android:layout_alignStart="@+id/btn_confirm" />
 
     <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/btn_code"
+        android:id="@+id/btn_confirm"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
@@ -51,10 +52,9 @@
         fancy:fb_focusColor="@color/colorPrimaryLight"
         fancy:fb_iconPosition="left"
         fancy:fb_radius="15dp"
-        fancy:fb_text="Получить код"
+        fancy:fb_text="Подтвердить"
         fancy:fb_textColor="#FFFFFF"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="27dp"
         android:layout_below="@+id/login_mobile_number"
         android:layout_centerHorizontal="true" />
-
 </RelativeLayout>

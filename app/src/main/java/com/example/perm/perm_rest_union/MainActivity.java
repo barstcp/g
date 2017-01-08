@@ -1,16 +1,19 @@
 package com.example.perm.perm_rest_union;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.perm.perm_rest_union.activity.ActivityCallback;
+import com.example.perm.perm_rest_union.view.fragments.ConfirmFragment;
 import com.example.perm.perm_rest_union.view.fragments.LoginFragment;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActivityCallback {
 
     private  final static String TAG = "TAG";
     private FragmentManager fragmentManager;
@@ -32,5 +35,16 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.container, fragment, TAG);
         if (addBackStack) transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void startConfirm() {
+        replaceFragment(ConfirmFragment.newInstance(), true);
+    }
+
+    @Override
+    public void startWelcome() {
+        Intent intent = new Intent(this, WelcomeScreen.class);
+        startActivity(intent);
     }
 }

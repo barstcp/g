@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Perm_REST_UNION</string>
     <string name="send">Отправить</string>
+    <string name="title_section1">ссылка на блюдо</string>
+    <string name="title_section2">ссылка на закказ</string>
+    <string name="title_section3">размещение столов</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

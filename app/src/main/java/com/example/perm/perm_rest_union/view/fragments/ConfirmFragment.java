@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.example.perm.perm_rest_union.R;
 import com.example.perm.perm_rest_union.activity.ActivityCallback;
@@ -16,17 +15,20 @@ import butterknife.ButterKnife;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 /**
- * Created by Ramil on 24.12.2016.
+ * Created by Ramil on 02.01.2017.
  */
 
-public class LoginFragment extends Fragment {
-    @Bind(R.id.btn_code)
-    FancyButton button;
-    @Bind(R.id.login_mobile_number)
-    EditText mobile;
+public class ConfirmFragment extends Fragment {
 
+    @Bind(R.id.btn_confirm)
+    FancyButton button;
 
     ActivityCallback activityCallback;
+
+    public static ConfirmFragment newInstance() {
+
+        return new ConfirmFragment();
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -43,18 +45,19 @@ public class LoginFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle savedInstanceState) {
-        View view = layoutInflater.inflate(R.layout.login_fragment, viewGroup, false);
+        View view = layoutInflater.inflate(R.layout.confirm, viewGroup, false);
+
         ButterKnife.bind(this, view);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activityCallback.startConfirm();
+                activityCallback.startWelcome();
             }
         });
-
         return view;
     }
 }
